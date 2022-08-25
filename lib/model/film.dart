@@ -1,6 +1,6 @@
 class Film {
   final String title;
-  final String episode;
+  final int episode;
   final String description;
   final String director;
   final String producer;

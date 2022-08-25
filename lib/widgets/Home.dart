@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'films_screen.dart';
+import 'meteo.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -65,75 +66,12 @@ class Home extends StatelessWidget {
                     side: const BorderSide(width: 1.0, color: Colors.yellow,),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
-
                     ),
                   ),
-                  child: const Text('Personnages', style: TextStyle(fontSize: 20.0, color: Colors.white),),
-                  onPressed: () {},
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.all(10),
-                height: 50.0,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shadowColor: Colors.yellow,
-                    elevation: 5,
-                    side: const BorderSide(width: 1.0, color: Colors.yellow,),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  child: const Text('Planètes', style: TextStyle(fontSize: 20.0, color: Colors.white),),
-                  onPressed: () {},
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.all(10),
-                height: 50.0,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shadowColor: Colors.yellow,
-                    elevation: 5,
-                    side: const BorderSide(width: 1.0, color: Colors.yellow,),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  child: const Text('Espèces', style: TextStyle(fontSize: 20.0, color: Colors.white),),
-                  onPressed: () {},
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.all(10),
-                height: 50.0,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shadowColor: Colors.yellow,
-                    elevation: 5,
-                    side: const BorderSide(width: 1.0, color: Colors.yellow,),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  child: const Text('Vaisseaux', style: TextStyle(fontSize: 20.0, color: Colors.white),),
-                  onPressed: () {},
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.all(10),
-                height: 50.0,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shadowColor: Colors.yellow,
-                    elevation: 5,
-                    side: const BorderSide(width: 1.0, color: Colors.yellow,),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  child: const Text('Véhicules', style: TextStyle(fontSize: 20.0, color: Colors.white),),
-                  onPressed: () {},
+                  child: const Text('Météo', style: TextStyle(fontSize: 20.0, color: Colors.white),),
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const Meteo()));
+                  },
                 ),
               ),
             ],
