@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'films_screen.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -38,26 +39,30 @@ class Home extends StatelessWidget {
 
               Container(
                 margin: const EdgeInsets.all(10),
+                height: 50.0,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     shadowColor: Colors.yellow,
                     elevation: 5,
-                    side: const BorderSide(width: 2.0, color: Colors.yellow,),
+                    side: const BorderSide(width: 1.0, color: Colors.yellow,),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),
                   child: const Text('Films', style: TextStyle(fontSize: 20.0, color: Colors.white),),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const FilmsPage()));
+                  },
                 ),
               ),
               Container(
                 margin: const EdgeInsets.all(10),
+                height: 50.0,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     shadowColor: Colors.yellow,
                     elevation: 5,
-                    side: const BorderSide(width: 2.0, color: Colors.yellow,),
+                    side: const BorderSide(width: 1.0, color: Colors.yellow,),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
 
@@ -69,11 +74,12 @@ class Home extends StatelessWidget {
               ),
               Container(
                 margin: const EdgeInsets.all(10),
+                height: 50.0,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     shadowColor: Colors.yellow,
                     elevation: 5,
-                    side: const BorderSide(width: 2.0, color: Colors.yellow,),
+                    side: const BorderSide(width: 1.0, color: Colors.yellow,),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -84,11 +90,12 @@ class Home extends StatelessWidget {
               ),
               Container(
                 margin: const EdgeInsets.all(10),
+                height: 50.0,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     shadowColor: Colors.yellow,
                     elevation: 5,
-                    side: const BorderSide(width: 2.0, color: Colors.yellow,),
+                    side: const BorderSide(width: 1.0, color: Colors.yellow,),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -99,11 +106,12 @@ class Home extends StatelessWidget {
               ),
               Container(
                 margin: const EdgeInsets.all(10),
+                height: 50.0,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     shadowColor: Colors.yellow,
                     elevation: 5,
-                    side: const BorderSide(width: 2.0, color: Colors.yellow,),
+                    side: const BorderSide(width: 1.0, color: Colors.yellow,),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -114,11 +122,12 @@ class Home extends StatelessWidget {
               ),
               Container(
                 margin: const EdgeInsets.all(10),
+                height: 50.0,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     shadowColor: Colors.yellow,
                     elevation: 5,
-                    side: const BorderSide(width: 2.0, color: Colors.yellow,),
+                    side: const BorderSide(width: 1.0, color: Colors.yellow,),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
