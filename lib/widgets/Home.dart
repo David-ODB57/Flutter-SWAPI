@@ -70,7 +70,7 @@ class Home extends StatelessWidget {
                   ),
                   child: const Text('Météo', style: TextStyle(fontSize: 20.0, color: Colors.white),),
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const Meteo()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const Weather()));
                   },
                 ),
               ),

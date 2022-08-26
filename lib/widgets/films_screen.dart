@@ -17,11 +17,10 @@ class FilmsPageState extends State<FilmsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-        title: const Text(
-          'Films',
-          style:  TextStyle(color: Colors.yellow),
-        ),
-
+          title: const Text(
+            'Films',
+            style:  TextStyle(color: Colors.yellow),
+          ),
         ),
         body: _listDeFilm(),
     );

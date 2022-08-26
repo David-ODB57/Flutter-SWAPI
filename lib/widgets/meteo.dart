@@ -1,75 +1,101 @@
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
+import '../model/weather.dart';
+import '../model/weatherList.dart';
 
-
-class Meteo extends StatefulWidget {
-  const Meteo({Key? key}) : super(key: key);
+class Weather extends StatefulWidget {
+  const Weather({Key? key}) : super(key: key);
 
   @override
-  MeteoState createState() => MeteoState();
+  _WeatherState createState() => _WeatherState();
 }
 
-class MeteoState extends State<Meteo> {
+class _WeatherState extends State<Weather> {
 
-  Future<Position> _determinePosition() async {
-    bool serviceEnabled;
-    LocationPermission permission;
+  late int temperature = 0;
+  late String condition = '';
+  late int humidity = 0;
+  late String country = '';
+  late String city = '';
+  late String planet = '';
 
-    // Test if location services are enabled.
-    serviceEnabled = await Geolocator.isLocationServiceEnabled();
-    if (!serviceEnabled) {
-      return Future.error('Services de localisation désactivé.');
-    }
+  WeatherModel weatherModel = WeatherModel();
 
-    permission = await Geolocator.checkPermission();
-    if (permission == LocationPermission.denied) {
-      permission = await Geolocator.requestPermission();
-      if (permission == LocationPermission.denied) {
-        return Future.error('Localisation permissions refusées');
-      }
-    }
+  @override
+  void initState() {
+    super.initState();
+    getLocationData();
+  }
 
-    if (permission == LocationPermission.deniedForever) {
-      return Future.error(
-          'Localisation refusée de façon permanente, on ne peut demander de permission.');
-    }
-    // continue accessing the position of the device.
-    Position currentLocation = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
-    print(currentLocation);
-    //Retourne Latitude: 54.656565, Longitude: 6.32154584
-     var pos = await http
-        .get(Uri.parse(
-        'https://api.openweathermap.org/data/2.5/weather?lat=${currentLocation.latitude}&lon=${currentLocation.longitude}&units=metric&lang=fr&appid=180aa9da1467549c9761e5a9a2daad88'))
-        .then((response) => json.decode(response.body));
-    print(pos);
-    return currentLocation;
+  getLocationData() async {
+    var weatherData = await weatherModel.getLocationWeather();
+
+    setState(() {
+      condition = weatherData['weather'][0]['main'];
+      humidity = weatherData['main']['humidity'];
+      country = weatherData['sys']['country'];
+      city = weatherData['name'];
+      double temp = weatherData['main']['temp'];
+      temperature = temp.toInt();
+      planet = weathers[];
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Météo',
-            style:  TextStyle(color: Colors.yellow),
+      appBar: AppBar(
+        title: const Text(
+          'Météo',
+          style:  TextStyle(color: Colors.yellow),
+        ),
+      ),
+      body: Center(
+        child: Container(
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('img/weather/$.jpg'),
+                fit: BoxFit.cover,
+              )
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  'Temperature: $temperature°',
+                  style: const TextStyle(
+                    fontFamily: 'sw',
+                    fontSize: 40.0,
+                  ),
+                ),
+                Text(
+                  'condition: $condition',
+                  style: const TextStyle(
+                    fontFamily: 'sw',
+                    fontSize: 40.0,
+                  ),
+                ),
+                Text(
+                  'humidity: $humidity%',
+                  style: const TextStyle(
+                    fontFamily: 'sw',
+                    fontSize: 40.0,
+                  ),
+                ),
+                Text(
+                  'Ville: $city',
+                  style: const TextStyle(
+                    fontFamily: 'sw',
+                    fontSize: 40.0,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-             ElevatedButton(
-               onPressed: _determinePosition,
-               child: Text(
-                   style: TextStyle(color: Colors.yellow),
-                   "Où suis-je ?"
-               ),
-             ),
-            ],
-          ),
-        ),
+      ),
     );
   }
 }
