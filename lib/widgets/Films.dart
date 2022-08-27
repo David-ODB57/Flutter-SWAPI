@@ -32,7 +32,10 @@ class FilmsPageState extends State<FilmsPage> {
         builder: (_, snapshot) {
           if (snapshot.connectionState != ConnectionState.done) {
             return const Center(
-                child: CircularProgressIndicator(),
+                child: CircularProgressIndicator(
+                  color: Colors.yellow,
+                  backgroundColor: Colors.transparent,
+                ),
             );
           }
             return ListView.builder(

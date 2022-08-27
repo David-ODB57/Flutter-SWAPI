@@ -74,7 +74,10 @@ class WeatherState extends State<Weather> {
 
   Widget _weatherDisplay() {
     if(info == '') {
-      return const Center(child: CircularProgressIndicator());
+      return const Center(child: CircularProgressIndicator(
+        color: Colors.yellow,
+        backgroundColor: Colors.transparent,
+      ));
     }
     return Container(
       decoration: BoxDecoration(
