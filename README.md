@@ -4,9 +4,9 @@ This project is a starting point for a mobile Flutter application based on SWAPI
 It's a project done for my training in MNS (Mets Numeric School).
 
 ## It's composed of
-Markup : - A page returning only the films list.
-         - A Weather page accessing Open Weather API with a SW customization.
-         - Demo page to test notifications.
+- A page returning only the films list.
+- A Weather page accessing Open Weather API with a SW customization.
+- Demo page to test notifications.
 
 ## Getting Started
 
