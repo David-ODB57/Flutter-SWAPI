@@ -10,4 +10,4 @@ It's a project done for my training in MNS (Mets Numeric School).
 
 ## Getting Started
 
-After cloning don't forget to do flutter pub get
+After cloning don't forget to do 'flutter pub get'
