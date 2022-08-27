@@ -1,4 +1,4 @@
-import 'package:flutter_swapi/widgets/location.dart';
+import 'package:flutter_swapi/services/location.dart';
 import 'package:flutter_swapi/widgets/weather_data.dart';
 
 const weatherApiUrl = 'https://api.openweathermap.org/data/2.5/weather';

@@ -1,58 +1,45 @@
-List<Map<dynamic, Object>> weathers = [
+
+final weathers = [
   {
-    'weather': "Thunderstorm",
-    'planetName': "Kamino",
+    'Thunderstorm': "Kamino",
   },
   {
-    'weather': "Drizzle",
-    'planetName': "Kashyyyk",
+    'Drizzle': "Kashyyyk",
   },
   {
-    'weather': "Rain",
-    'planetName': "Kamino",
+    'Rain': "Kamino",
   },
   {
-    'weather': "Snow",
-    'planetName': "Hoth",
+    'Snow': "Hoth",
   },
   {
-    'weather': "Mist",
-    'planetName': "Dagobah",
+    "Mist": "Dagobah",
   },
   {
-    'weather': "Smoke",
-    'planetName': "Balosar",
+    "Smoke": "Balosar",
   },
   {
-    'weather': "Haze",
-    'planetName': "Dagobah",
+    "Haze": "Dagobah",
   },
   {
-    'weather': "Dust",
-    'planetName': "Tatooine",
+    "Dust": "Tatooine",
   },
   {
-    'weather': "Fog",
-    'planetName': "Endor",
+    "Fog": "Endor",
   },
   {
-    'weather': "Sand",
-    'planetName': "Tatooine",
+    "Sand": "Tatooine",
   },
   {
-    'weather': "Ash",
-    'planetName': "Mustafar",
+    "Ash": "Mustafar",
   },
   {
-    'weather': "Squall",
-    'planetName': "Kamino",
+    "Squall": "Kamino",
   },
   {
-    'weather': "Tornado",
-    'planetName': "Geonosis",
+    "Tornado": "Geonosis",
   },
   {
-    'weather': "Clouds",
-    'planetName': "Bespin",
+    "Clouds": "Bespin",
   },
 ];

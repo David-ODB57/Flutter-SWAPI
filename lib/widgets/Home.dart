@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'films_screen.dart';
-import 'meteo.dart';
+import 'Films.dart';
+import 'package:flutter_swapi/widgets/Notifications.dart';
+import 'Meteo.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -71,6 +72,24 @@ class Home extends StatelessWidget {
                   child: const Text('Météo', style: TextStyle(fontSize: 20.0, color: Colors.white),),
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => const Weather()));
+                  },
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.all(10),
+                height: 50.0,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shadowColor: Colors.yellow,
+                    elevation: 5,
+                    side: const BorderSide(width: 1.0, color: Colors.yellow,),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  child: const Text('Notification', style: TextStyle(fontSize: 20.0, color: Colors.white),),
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const Notifications()));
                   },
                 ),
               ),
