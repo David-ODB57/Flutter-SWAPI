@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_swapi/widgets/Home.dart';
+import 'package:flutter_swapi/widgets/home.dart';
 
 void main() => runApp(const Swapi());
 

@@ -12,7 +12,7 @@ class WeatherData {
       String data = response.body;
       return jsonDecode(data);
     } else {
-      print(response.statusCode);
+      return 'Error: ${response.reasonPhrase}';
     }
   }
 }

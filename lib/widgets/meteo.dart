@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../model/weather.dart';
-import '../model/weatherList.dart';
+import '../model/weather_list.dart';
 
 class Weather extends StatefulWidget {
   const Weather({Key? key}) : super(key: key);

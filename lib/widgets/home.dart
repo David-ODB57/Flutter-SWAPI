@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'Films.dart';
-import 'package:flutter_swapi/widgets/Notifications.dart';
-import 'Meteo.dart';
+import 'films.dart';
+import 'package:flutter_swapi/widgets/notifications.dart';
+import 'meteo.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
