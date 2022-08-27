@@ -1,4 +1,4 @@
-# FLutter SWAPI
+# Flutter SWAPI
 
 This project is a starting point for a mobile Flutter application based on SWAPI & Open Weather.
 It's a project done for my training in MNS (Mets Numeric School).
