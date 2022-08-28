@@ -31,6 +31,8 @@ class WeatherState extends State<Weather> {
 
    setState(() {
       int time = DateTime.now().hour;
+      //Weather API can return a int or a double for temp
+      var temp = weatherData['main']['temp'];
 
       if(weatherData['weather'][0]['main'] == "Clear" && temperature >=20 && temperature <= 30) {
         image = time > 18 ? 'Coruscant-night' : 'Coruscant-day';
@@ -54,7 +56,6 @@ class WeatherState extends State<Weather> {
       condition = weatherData['weather'][0]['description'];
       humidity = weatherData['main']['humidity'];
       city = weatherData['name'];
-      double temp = weatherData['main']['temp'];
       temperature = temp.toInt();
     });
   }
