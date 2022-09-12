@@ -1,13 +1,16 @@
 # Flutter SWAPI
 
-This project is a starting point for a mobile Flutter application based on SWAPI & Open Weather.
-It's a project done for my training in MNS (Mets Numeric School).
+Point de départ d'un projet pour une application mobile fait avec Flutter basé sur les API ***![SWAPI](https://swapi.dev/)*** & ***![Open Weather](https://openweathermap.org/api)***.
+Projet réalisé durant ma formation chez ![MNS](https://www.metz-numeric-school.fr/fr) (Metz Numeric School).
 
-## It's composed of
-- A page returning only the films list.
-- A Weather page accessing Open Weather API with a SW customization.
-- Demo page to test notifications.
+## Fonctionnalités
+- Une page retournant la liste des films SW.
+- Une page météo retournant les résultats Open Weather avec une customisation SW.
+- Une page de démonstration sur les notifications.
 
-## Getting Started
+## Installation
 
-After cloning don't forget to do 'flutter pub get'
+- Coler le repository, 
+- Mettre à jour vos paquets (```flutter pub get```).
+- Choisir votre appareil pour le rendu (sur votre mobile ou un émulateur).
+- Lancer l'application depuis votre IDE.
