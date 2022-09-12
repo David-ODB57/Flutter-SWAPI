@@ -3,6 +3,9 @@ Point de départ d'un projet pour une application mobile fait avec Flutter basé
 Projet réalisé durant ma formation chez ![MNS](https://www.metz-numeric-school.fr/fr) (Metz Numeric School).
 ### ***Note***
 Il vous faudra vous procurer une clé auprès Open Weather pour utiliser correctement l'application.
+Assurez vous également que les notifications sont activés sur l'émulateur (voir les paramètres).
+Cette application n'a pas été testé sur IPhone.
+
 
 ## Fonctionnalités
 - Une page retournant la liste des films SW.
