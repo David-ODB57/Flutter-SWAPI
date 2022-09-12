@@ -4,8 +4,8 @@
 *.pyc
 *.swp
 *.env
-.img/swapi.png
-.img/swapi_weather.png
+/img/swapi.png
+/img/swapi_weather.png
 .DS_Store
 .atom/
 .buildlog/
