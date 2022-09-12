@@ -10,7 +10,9 @@ Projet réalisé durant ma formation chez ![MNS](https://www.metz-numeric-school
 
 ## Installation
 
-- Coler le repository, 
+- Cloner le repository,
 - Mettre à jour vos paquets (```flutter pub get```).
+- Créer un fichier .env à la racine du projet.
+- Ajouter la variable d'environnement API_KEY=votre clé api Open Weather.
 - Choisir votre appareil pour le rendu (sur votre mobile ou un émulateur).
 - Lancer l'application depuis votre IDE.
