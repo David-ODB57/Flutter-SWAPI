@@ -1,45 +1,45 @@
 
 final weathers = [
   {
-    'Thunderstorm': "Kamino",
+    'weather': 'Thunderstorm', 'image': "Kamino",
   },
   {
-    'Drizzle': "Kashyyyk",
+  'weather': 'Drizzle', 'image': "Kashyyyk",
   },
   {
-    'Rain': "Kamino",
+  'weather': 'Rain', 'image': "Kamino",
   },
   {
-    'Snow': "Hoth",
+  'weather': 'Snow', 'image': "Hoth",
   },
   {
-    "Mist": "Dagobah",
+  'weather': "Mist", 'image': "Dagobah",
   },
   {
-    "Smoke": "Balosar",
+  'weather': "Smoke", 'image': "Balosar",
   },
   {
-    "Haze": "Dagobah",
+  'weather': "Haze", 'image': "Dagobah",
   },
   {
-    "Dust": "Tatooine",
+  'weather': "Dust", 'image': "Tatooine",
   },
   {
-    "Fog": "Endor",
+  'weather': "Fog", 'image': "Endor",
   },
   {
-    "Sand": "Tatooine",
+  'weather': "Sand", 'image': "Tatooine",
   },
   {
-    "Ash": "Mustafar",
+  'weather': "Ash", 'image': "Mustafar",
   },
   {
-    "Squall": "Kamino",
+  'weather': "Squall", 'image': "Kamino",
   },
   {
-    "Tornado": "Geonosis",
+  'weather': "Tornado", 'image': "Geonosis",
   },
   {
-    "Clouds": "Bespin",
+  'weather': "Clouds", 'image': "Bespin",
   },
 ];

@@ -15,8 +15,10 @@ class WeatherState extends State<Weather> {
   late int humidity = 0;
   late String city = '';
   late String condition = '';
-  late String image = 'Balosar';
+  late String image = '';
   late String info = '';
+
+  bool isWeatherUp = false;
 
   WeatherModel weatherModel = WeatherModel();
 
@@ -34,29 +36,28 @@ class WeatherState extends State<Weather> {
       //Weather API can return a int or a double for temp
       var temp = weatherData['main']['temp'];
 
-      if(weatherData['weather'][0]['main'] == "Clear" && temperature >=20 && temperature <= 30) {
-        image = time > 18 ? 'Coruscant-night' : 'Coruscant-day';
-        info = ' comme sur $image';
-      } else {
-        image = 'Naboo';
-        info = ' comme sur $image';
-      }
-
       if(temperature > 40) {
         image = 'Mustafar';
         info = "caniculaire comme sur $image";
+      }
+
+      if(weatherData['weather'][0]['main'] == "Clear" && temperature >=20 && temperature <= 30) {
+        image = time > 18 ? 'Coruscant-night' : 'Coruscant-day';
+        info = 'comme sur $image';
       } else {
         for (var w in weathers) {
-          if(w == weatherData['weather'][0]['main']) {
-            image = '$weathers[$w]';
-            info = "comme sur $image";
+          if(w['weather'] == weatherData['weather'][0]['main']) {
+            image = w['image'] as String;
+            info = 'comme sur $image';
           }
         }
       }
+
       condition = weatherData['weather'][0]['description'];
       humidity = weatherData['main']['humidity'];
       city = weatherData['name'];
       temperature = temp.toInt();
+      isWeatherUp = true;
     });
   }
 
@@ -74,7 +75,7 @@ class WeatherState extends State<Weather> {
   }
 
   Widget _weatherDisplay() {
-    if(info == '') {
+    if(!isWeatherUp) {
       return const Center(child: CircularProgressIndicator(
         color: Colors.yellow,
         backgroundColor: Colors.transparent,
@@ -121,7 +122,7 @@ class WeatherState extends State<Weather> {
                     condition,
                     style: const TextStyle(
                         fontFamily: 'sw',
-                        fontSize: 60.0,
+                        fontSize: 45.0,
                         color: Colors.black,
                         shadows: <Shadow>[
                           Shadow(

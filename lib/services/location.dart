@@ -1,10 +1,12 @@
 import 'package:geolocator/geolocator.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class Location {
+
   late double latitude;
   late double longitude;
-  String apiKey = '180aa9da1467549c9761e5a9a2daad88';
   late int status;
+  late String? apiKey = dotenv.env['API_KEY'];
 
   Future<void> getCurrentLocation() async {
     LocationPermission permission;

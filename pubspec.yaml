@@ -19,6 +19,7 @@ dependencies:
   geolocator: ^9.0.1
   flutter_local_notifications: ^9.8.0+1
   timezone: ^0.8.0
+  flutter_dotenv: ^5.0.2
 
 dev_dependencies:
   flutter_test:
@@ -32,6 +33,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - .env
     - img/bg.jpg
     - img/weather/
 

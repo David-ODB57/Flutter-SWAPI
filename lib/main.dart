@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swapi/widgets/home.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() => runApp(const Swapi());
+Future<void> main() async {
+  await dotenv.load(fileName: ".env");
+  runApp(const Swapi());
+}
 
 class Swapi extends StatelessWidget {
   const Swapi({Key? key}) : super(key: key);
