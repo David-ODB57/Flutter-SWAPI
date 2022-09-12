@@ -1,5 +1,5 @@
 
-final weathers = [
+final List weathers = [
   {
     'weather': 'Thunderstorm', 'image': "Kamino",
   },

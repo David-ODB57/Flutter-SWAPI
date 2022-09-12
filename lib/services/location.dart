@@ -3,8 +3,8 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class Location {
 
-  late double latitude;
-  late double longitude;
+  late double? latitude;
+  late double? longitude;
   late int status;
   late String? apiKey = dotenv.env['API_KEY'];
 

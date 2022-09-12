@@ -11,15 +11,14 @@ class Weather extends StatefulWidget {
 
 class WeatherState extends State<Weather> {
 
-  late int temperature = 0;
-  late int humidity = 0;
-  late String city = '';
-  late String condition = '';
-  late String image = '';
-  late String info = '';
+  int temperature = 0;
+  int humidity = 0;
+  String? city;
+  String? condition;
+  String? image;
+  String? info;
 
   bool isWeatherUp = false;
-
   WeatherModel weatherModel = WeatherModel();
 
   @override
@@ -28,13 +27,16 @@ class WeatherState extends State<Weather> {
     getLocationData();
   }
 
-  getLocationData() async {
-    var weatherData = await weatherModel.getLocationWeather();
+  Future<void> getLocationData() async {
+    dynamic weatherData = await weatherModel.getLocationWeather();
 
-   setState(() {
+    setState(() {
       int time = DateTime.now().hour;
-      //Weather API can return a int or a double for temp
-      var temp = weatherData['main']['temp'];
+      final temp = weatherData['main']['temp'];
+      temperature = temp.toInt();
+      condition = weatherData['weather'][0]['description'];
+      humidity = weatherData['main']['humidity'];
+      city = weatherData['name'];
 
       if(temperature > 40) {
         image = 'Mustafar';
@@ -43,20 +45,15 @@ class WeatherState extends State<Weather> {
 
       if(weatherData['weather'][0]['main'] == "Clear" && temperature >=20 && temperature <= 30) {
         image = time > 18 ? 'Coruscant-night' : 'Coruscant-day';
-        info = 'comme sur $image';
+        info = 'comme sur Coruscant';
       } else {
         for (var w in weathers) {
           if(w['weather'] == weatherData['weather'][0]['main']) {
-            image = w['image'] as String;
+            image = w['image'];
             info = 'comme sur $image';
           }
         }
       }
-
-      condition = weatherData['weather'][0]['description'];
-      humidity = weatherData['main']['humidity'];
-      city = weatherData['name'];
-      temperature = temp.toInt();
       isWeatherUp = true;
     });
   }
@@ -119,7 +116,7 @@ class WeatherState extends State<Weather> {
                 Padding(
                   padding: const EdgeInsets.only(top: 50.0),
                   child: Text(
-                    condition,
+                    '$condition',
                     style: const TextStyle(
                         fontFamily: 'sw',
                         fontSize: 45.0,
@@ -138,7 +135,7 @@ class WeatherState extends State<Weather> {
                 Padding(
                   padding: const EdgeInsets.only(top: 15.0),
                   child: Text(
-                    info,
+                    '$info',
                     style: const TextStyle(
                         fontFamily: 'sw',
                         fontSize: 30.0,
