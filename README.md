@@ -22,6 +22,6 @@ Projet réalisé durant ma formation chez ![MNS](https://www.metz-numeric-school
 - Lancer l'application depuis votre IDE.
 
 ## :warning: **Note**
-- Procurez vous une clé auprès Open Weather.
+- Procurez vous une clé auprès d'Open Weather.
 - Assurez vous que les notifications sont activés sur l'émulateur (voir les paramètres).
 - Cette application n'a pas été testé sur IPhone.
